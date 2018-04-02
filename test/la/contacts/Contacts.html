@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        textarea:required:invalid, input:required:invalid {
+            background-color: lightyellow;
+        }
+    </style>
+
+    <script>
+        function validateComments(input) {
+            if (20 > input.value.length) {
+                input.setCustomValidity("You need to comment in more detail.");
+            }
+            else {
+                // There's no error. Clear any error message.
+                input.setCustomValidity("");
+            }
+        }
+    </script>
+    <title>
+        Contacts
+    </title>
+</head>
+<body>
+<h1>联系人信息</h1>
+<form action="" method="post">
+    <fieldset>
+        <legend>Basic Information</legend>
+        <table>
+            <tbody>
+            <tr>
+                <td>Last name<em>*</em>&nbsp; :</td>
+                <td>
+                    <label><input type="text" name="Last_name" autofocus required/></label>
+                </td>
+            </tr>
+            <tr>
+                <td>First name<em>*</em>&nbsp; :</td>
+                <td><label><input type="text" name="First_name" required/></label></td>
+            </tr>
+            <tr>
+                <td>Company&nbsp; :</td>
+                <td><label><input type="text" name="Company"/></label></td>
+            </tr>
+            <tr>
+                <td>Birthday<em>*</em>&nbsp; :</td>
+                <td><label><input type="date" name="Birthday"/></label></td>
+            </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Extra Information</legend>
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <label>
+                        <select name="phone">
+                            <option value="home">home</option>
+                            <option value="work">work</option>
+                            <option value="iphone">iphone</option>
+                            <option value="mobile">mobile</option>
+                            <option value="main">main</option>
+                            <option value="home fax">home fax</option>
+                            <option value="work fax">work fax</option>
+                            <option value="pager">pager</option>
+                            <option value="other">other</option>
+                        </select>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="text" name="number" size="15" maxsize="30"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <select name="phone">
+                            <option value="home">home</option>
+                            <option value="work">work</option>
+                            <option value="iphone">iphone</option>
+                            <option value="mobile">mobile</option>
+                            <option value="main">main</option>
+                            <option value="home fax">home fax</option>
+                            <option value="work fax">work fax</option>
+                            <option value="pager">pager</option>
+                            <option value="other">other</option>
+                        </select>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="text" name="number" size="15" maxsize="30"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>email<em>*</em> &nbsp;:</td>
+                <td>
+                    <label>
+                        <input type="email" name="email" size="50" placeholder="someone@xxx.com" required/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>Add notes<em>*</em>&nbsp;:</td>
+                <td>
+                    <label>
+                        <textarea name="Note" cols="28" rows="5" oninput="validateComments(this)" required></textarea>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>Favorite Animal&nbsp; ：</td>
+                <td>
+                    <datalist id="animalChoices">
+                        <span class="Label">Pick an option:</span>
+                        <select id="favoriteAnimalPreset">
+                            <option label="Alpaca" value="alpaca">
+                            <option label="Zebra" value="zebra">
+                            <option label="Cat" value="cat">
+                            <option label="Caribou" value="caribou">
+                            <option label="Caterpillar" value="caterpillar">
+                            <option label="Anaconda" value="anaconda">
+                            <option label="Human" value="human">
+                            <option label="Elephant" value="elephant">
+                            <option label="Wildebeest" value="wildebeest">
+                            <option label="Pigeon" value="pigeon">
+                            <option label="Crab" value="crab">
+                        </select>
+                        <br>
+                        <span class="Label">Or type it in:</span>
+                    </datalist>
+                    <label>
+                        <input list="animalChoices" id="favoriteAnimal">
+                    </label>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <label>Update your Profile picture :<input type="file" name="profile_picture"/></label>
+    </fieldset>
+    <br>
+    <input class="submit" type="image" src="../../images/submit.png"/>
+</form>
+<h2></h2>
+<a href="../log_in.html">click here to log in</a>
+<div id="editableElement">You can edit this t</div>
+</body>
+</html>
